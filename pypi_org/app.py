@@ -5,32 +5,26 @@ import flask
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 
-
-from infrastructure.view_modifiers import response
-
 app = flask.Flask(__name__)
 
 
-def get_latest_packages():
-    return [
-        {'name': 'flask', 'version': '1.2.3'},
-        {'name': 'sqlalchemy', 'version': '2.2.0'},
-        {'name': 'passlib', 'version': '3.0.0'}
-    ]
+def main():
+    register_blueprints()
+    app.run()
 
 
-@app.route('/')
-@response(template_file='home/index.html')
-def index():
-    test_packages = get_latest_packages()
-    return {'packages': test_packages}
-
-
-@app.route('/about')
-@response(template_file='home/about.html')
-def about():
-    return {}
+def register_blueprints():
+    from views import home_views
+    from views import package_views
+    from views import account_views
+    from views import cms_views
+    app.register_blueprint(home_views.blueprint)
+    app.register_blueprint(package_views.blueprint)
+    app.register_blueprint(account_views.blueprint)
+    app.register_blueprint(cms_views.blueprint)
 
 
 if __name__ == '__main__':
-    app.run()
+    main()
+else:
+    register_blueprints()
