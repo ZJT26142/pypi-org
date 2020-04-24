@@ -1,7 +1,7 @@
 import os
 import sys
 import flask
-
+import data.db_session as db_session
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 
@@ -10,7 +10,17 @@ app = flask.Flask(__name__)
 
 def main():
     register_blueprints()
+    setup_db()
     app.run()
+
+
+def setup_db():
+    db_file = os.path.join(
+        os.path.dirname(__file__),
+        'db',
+        'pypi.sqlite')
+
+    db_session.global_init(db_file)
 
 
 def register_blueprints():
