@@ -31,10 +31,13 @@ def register_blueprints():
     app.register_blueprint(home_views.blueprint)
     app.register_blueprint(package_views.blueprint)
     app.register_blueprint(account_views.blueprint)
-    app.register_blueprint(cms_views.blueprint)
+    # app.register_blueprint(cms_views.blueprint)
 
 
 if __name__ == '__main__':
     main()
 else:
+    print("App is running in the name of", __name__)
     register_blueprints()
+    setup_db()
+
