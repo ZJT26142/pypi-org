@@ -1,6 +1,6 @@
 import datetime
 import sqlalchemy
-from data.modelbase import SqlAlchemyBase
+from pypi_org.data.modelbase import SqlAlchemyBase
 
 
 class Download(SqlAlchemyBase):

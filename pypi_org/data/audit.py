@@ -3,8 +3,8 @@ import sqlalchemy
 from pypi_org.data.modelbase import SqlAlchemyBase
 
 
-class ProgrammingLanguage(SqlAlchemyBase):
-    __tablename__ = 'languages'
+class Audit(SqlAlchemyBase):
+    __tablename__ = 'auditing'
 
     id: str = sqlalchemy.Column(sqlalchemy.String, primary_key=True)
     created_date: datetime.datetime = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now, index=True)

@@ -1,14 +1,16 @@
 # noinspection PyUnresolvedReferences
-import data.downloads
+import pypi_org.data.audit
 # noinspection PyUnresolvedReferences
-import data.languages
+import pypi_org.data.downloads
 # noinspection PyUnresolvedReferences
-import data.licenses
+import pypi_org.data.languages
 # noinspection PyUnresolvedReferences
-import data.maintainers
+import pypi_org.data.licenses
 # noinspection PyUnresolvedReferences
-import data.package
+import pypi_org.data.maintainers
 # noinspection PyUnresolvedReferences
-import data.releases
+import pypi_org.data.package
 # noinspection PyUnresolvedReferences
-import data.users
+import pypi_org.data.releases
+# noinspection PyUnresolvedReferences
+import pypi_org.data.users

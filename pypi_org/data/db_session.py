@@ -2,7 +2,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 from sqlalchemy.orm import Session
 
-from data.modelbase import SqlAlchemyBase
+from pypi_org.data.modelbase import SqlAlchemyBase
 
 __factory = None
 
@@ -19,7 +19,7 @@ def global_init(db_file: str):
     conn_str = 'sqlite:///' + db_file.strip()
     print("Connecting to DB with {}".format(conn_str))
 
-    engine = sa.create_engine(conn_str, echo=True)
+    engine = sa.create_engine(conn_str, echo=False)
     __factory = orm.sessionmaker(bind=engine)
 
     # noinspection PyUnresolvedReferences

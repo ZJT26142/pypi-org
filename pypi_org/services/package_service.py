@@ -1,9 +1,9 @@
 from typing import List, Optional
 import sqlalchemy.orm
 
-import data.db_session as db_session
-from data.package import Package
-from data.releases import Release
+import pypi_org.data.db_session as db_session
+from pypi_org.data.package import Package
+from pypi_org.data.releases import Release
 
 
 def get_latest_releases(limit=10) -> List[Release]:
@@ -20,13 +20,13 @@ def get_latest_releases(limit=10) -> List[Release]:
 
 
 def get_package_count() -> int:
-    return 200
+
     session = db_session.create_session()
     return session.query(Package).count()
 
 
 def get_release_count() -> int:
-    return 200
+
     session = db_session.create_session()
     return session.query(Release).count()
 

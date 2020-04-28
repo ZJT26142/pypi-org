@@ -1,7 +1,7 @@
 import os
 import sys
 import flask
-import data.db_session as db_session
+import pypi_org.data.db_session as db_session
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 
@@ -24,10 +24,10 @@ def setup_db():
 
 
 def register_blueprints():
-    from views import home_views
-    from views import package_views
-    from views import account_views
-    from views import cms_views
+    from pypi_org.views import home_views
+    from pypi_org.views import package_views
+    from pypi_org.views import account_views
+    from pypi_org.views import cms_views
     app.register_blueprint(home_views.blueprint)
     app.register_blueprint(package_views.blueprint)
     app.register_blueprint(account_views.blueprint)
