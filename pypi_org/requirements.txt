@@ -3,3 +3,4 @@ sqlalchemy
 
 progressbar
 python-dateutil
+passlib
